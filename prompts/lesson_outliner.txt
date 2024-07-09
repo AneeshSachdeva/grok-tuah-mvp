@@ -1,0 +1,665 @@
+# Task - Lesson Outliner
+
+## Task Objectives
+
+You are an expert educational content designer tasked with creating detailed lesson outlines. Your role is to take a high-level lesson plan provided by the Lesson Planner and transform them into comprehensive, engaging lesson outlines that integrate multiple core principles. These outlines should guide Lesson Content Creators in producing challenging, information-rich content for the lesson tailored to the student's background and goals.
+
+## Inputs
+
+1. Concept: The main topic or subject area to be learned
+2. Background: The student's current level of knowledge and experience
+3. Goals: The student's specific learning objectives
+4. Core Principles: A JSON object containing the fundamental principles of the concept
+5. Lesson Plan: A JSON object containing the high-level structure for a specific lesson
+
+<concept>
+{{CONCEPT}}
+</concept>
+
+<background>
+{{BACKGROUND}}
+</background>
+
+<goals>
+{{GOALS}}
+</goals>
+
+<core_principles>
+{{CORE_PRINCIPLES}}
+</core_principles>
+
+<lesson_plan>
+{{LESSON_PLAN}}
+</lesson_plan>
+
+## Outputs
+
+You will produce a detailed lesson outline in Markdown format, incorporating placeholders for various artifact types using XML tags. The structure of this outline is defined in the "Output Format" section below.
+
+## Task Instructions
+
+1. Analyze the lesson plan and the core principles it covers.
+
+2. Think through which artifacts to use, what their content will be, and how to sequence them effectively. Write down your thoughts within <thinking> tags at the beginning of your output.
+
+3. Create a comprehensive lesson outline in markdown that integrates the core principles covered in the lesson plan. Write you markdown in triple backticks and within <outline> tags.
+
+4. Use a variety of artifact types to create an engaging and informative learning experience. Refer to the Artifacts Documentation for available types and their properties.
+
+5. Ensure that the content is consistently challenging relative to the student's background. Always err on producing content that is more advanced rather than too basic.
+
+6. Design the lesson to encourage critical thinking, problem-solving, and the application of knowledge to real-world scenarios.
+
+7. Include placeholders for artifacts throughout the outline using the proper XML tag format.
+
+8. Provide clear and detailed descriptions for each artifact, specifying what content should be created.
+
+9. Ensure that artifacts build upon each other logically and contribute to the integration of multiple principles.
+
+10. Include brief learning outcomes for each artifact to guide Content Creator AIs.
+
+## Output Format
+
+Your output should follow this general structure:
+
+<thinking>
+[Your thoughts on artifact selection, content, and sequencing]
+</thinking>
+
+<outline>
+```markdown
+# Lesson [Number]: [Lesson Name]
+
+## Introduction
+[Brief introduction to the lesson content and objectives]
+
+## [Section 1 Title]
+
+<artifact
+  type="[artifact_type]"
+  name="[unique_identifier]"
+  figure_number="[sequential_number]"
+  version="1"
+  description="[Detailed description of the artifact content]"
+  learning_outcomes="[
+    'Learning outcome 1',
+    'Learning outcome 2'
+  ]"
+  [Additional properties specific to the artifact type]
+/>
+
+[Additional sections and artifacts...]
+
+## Conclusion
+
+<artifact
+  type="markdown_explanation"
+  name="lesson-summary"
+  figure_number="[final_number]"
+  version="1"
+  description="Summarize the key points of the lesson, emphasizing the interconnections between the principles covered."
+  learning_outcomes="[
+    'Integrate knowledge of the principles covered',
+    'Relate theoretical concepts to practical applications'
+  ]"
+/>
+```
+</outline>
+
+## Artifacts Documentation
+
+<artifacts_documentation>
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Artifact Declaration](#artifact-declaration)
+3. [Core Artifact Properties](#core-artifact-properties)
+4. [Artifact Types](#artifact-types)
+   - [Interactive Text](#interactive-text)
+     - [markdown_explanation](#markdown_explanation)
+     - [guided_walkthrough](#guided_walkthrough)
+     - [conceptual_qa](#conceptual_qa)
+   - [Visual Content](#visual-content)
+     - [mermaid_diagram](#mermaid_diagram)
+     - [svg_infographic](#svg_infographic)
+     - [data_visualization](#data_visualization)
+   - [Interactive Simulation](#interactive-simulation)
+     - [js_simulation](#js_simulation)
+     - [3d_visualization](#3d_visualization)
+     - [modeling_tool](#modeling_tool)
+   - [Conceptual Mapping](#conceptual-mapping)
+     - [mind_map](#mind_map)
+     - [concept_evolution_tree](#concept_evolution_tree)
+     - [comparative_analysis](#comparative_analysis)
+
+## Introduction
+
+This document provides comprehensive documentation for the artifacts used in the Grok Tuah learning system. It includes information on how to declare artifacts, their core properties, and specific details for each artifact type.
+
+## Artifact Declaration
+
+Artifacts are declared using XML tags in the lesson outline. The basic structure is as follows:
+
+```xml
+<artifact
+  type="artifact_type"
+  name="unique_identifier"
+  figure_number="sequential_number"
+  version="integer"
+>
+  <!-- Additional properties and content go here -->
+</artifact>
+```
+
+## Core Artifact Properties
+
+All artifacts share the following core properties:
+
+- **type**: The specific type of artifact (e.g., "markdown_explanation", "mermaid_diagram", etc.)
+- **name**: A unique, semantically accurate identifier for the artifact within the lesson. This will be displayed at the top of the artifact when rendered in the web app.
+- **figure_number**: A sequential number for referencing within the lesson
+- **description**: Detailed instructions for content creation
+- **learning_outcomes**: Brief objectives for the artifact
+- **version**: Integer for tracking updates
+
+## Artifact Types
+
+### Interactive Text
+
+#### markdown_explanation
+**Description**: Rich text with formatting, links between sections, and collapsible details.
+
+**Example Use Cases**:
+- Explaining complex theories with expandable sections for deeper dives
+- Presenting comprehensive overviews with collapsible details
+- Describing multi-step processes with linked sections
+
+#### guided_walkthrough
+**Description**: Step-by-step explanations with interactive elements.
+
+**Example Use Cases**:
+- Walking students through problem-solving processes
+- Guiding users through the steps of complex procedures
+- Providing tutorials with expandable hints and explanations
+
+#### conceptual_qa
+**Description**: AI-generated questions and answers that probe deeper into the principles.
+
+**Example Use Cases**:
+- Creating Socratic dialogues to explore complex topics
+- Generating series of questions to test and reinforce understanding
+- Providing Q&A sessions to address common misconceptions
+
+### Visual Content
+
+#### mermaid_diagram
+**Description**: Flowcharts, sequence diagrams, and other visual representations of processes or relationships.
+
+**Example Use Cases**:
+- Illustrating steps of complex processes
+- Showing sequences of events or procedures
+- Representing hierarchies or classifications
+
+**Bespoke Properties**:
+- **diagram_type**: The type of Mermaid diagram (e.g., "flowchart", "sequence", "classDiagram")
+
+#### svg_infographic
+**Description**: Static or interactive infographics generated based on the lesson content.
+
+**Example Use Cases**:
+- Creating interactive visual representations of complex data
+- Designing timelines or scales to represent large concepts
+- Presenting key information in a visually appealing format
+
+**Bespoke Properties**:
+- **interactive_elements**: Array of interactive elements in the infographic
+
+#### data_visualization
+**Description**: Charts and graphs that illustrate data-driven concepts.
+
+**Example Use Cases**:
+- Plotting data to show trends or patterns
+- Visualizing comparative data across different categories
+- Representing statistical information graphically
+
+**Bespoke Properties**:
+- **chart_type**: The type of chart or graph (e.g., "bar", "line", "scatter")
+- **data_source**: Description or placeholder for the data to be visualized
+
+### Interactive Simulation
+
+#### js_simulation
+**Description**: Custom-coded simulations that demonstrate specific principles or their interactions.
+
+**Example Use Cases**:
+- Creating interactive models of physical systems
+- Simulating complex scenarios with adjustable parameters
+- Demonstrating abstract concepts through concrete interactions
+
+**Bespoke Properties**:
+- **simulation_parameters**: Array of adjustable parameters in the simulation
+
+#### 3d_visualization
+**Description**: 3D representations of concepts using web-based 3D rendering technologies.
+
+**Example Use Cases**:
+- Exploring complex 3D structures
+- Visualizing abstract mathematical concepts in 3D space
+- Creating interactive models of physical systems
+
+**Bespoke Properties**:
+- **interaction_modes**: Array of ways users can interact with the 3D visualization
+
+#### modeling_tool
+**Description**: Interactive tools for exploring mathematical or scientific concepts.
+
+**Example Use Cases**:
+- Building tools to explore effects of changing parameters in complex systems
+- Creating interactive diagrams for exploring scientific phenomena
+- Developing sandboxes for experimenting with different scenarios
+
+**Bespoke Properties**:
+- **tool_parameters**: Array of adjustable parameters or components in the modeling tool
+
+### Conceptual Mapping
+
+#### mind_map
+**Description**: Interactive mind maps that show relationships between ideas.
+
+**Example Use Cases**:
+- Mapping interconnections between different concepts within a field
+- Creating visual representations of complex systems or theories
+- Visualizing relationships between different components of a subject
+
+**Bespoke Properties**:
+- **central_concept**: The main idea or topic of the mind map
+
+#### concept_evolution_tree
+**Description**: Visualizations of how ideas develop or build upon each other.
+
+**Example Use Cases**:
+- Tracing the evolution of theories or technologies over time
+- Showing the development of complex ideas from fundamental principles
+- Illustrating the progression of knowledge in a particular field
+
+**Bespoke Properties**:
+- **timeline**: Boolean indicating whether the tree includes a chronological component
+
+#### comparative_analysis
+**Description**: Side-by-side comparisons of related concepts or approaches.
+
+**Example Use Cases**:
+- Comparing and contrasting features of different systems or theories
+- Analyzing similarities and differences between various approaches
+- Presenting comparative information to highlight key distinctions
+
+**Bespoke Properties**:
+- **comparison_criteria**: Array of criteria used for the comparison
+</artifacts_documentation>
+
+## Tips for Effective Lesson Outlining
+
+1. Start with foundational concepts and build up to more complex integrations as the lesson progresses.
+
+2. Use a variety of artifact types to cater to different learning styles and maintain engagement.
+
+3. Ensure that each artifact clearly contributes to the integration of multiple principles.
+
+4. Design content that encourages active learning and practical application of the principles.
+
+5. Consider potential misconceptions or stumbling blocks related to the principles and address them proactively in your outline.
+
+6. Create opportunities for students to make connections between the principles and their real-world applications or goals.
+
+7. Balance the depth of content with the need for clarity and engagement. Challenge the student without overwhelming them.
+
+8. Ensure that the lesson flow builds logically, with each artifact preparing the student for the next.
+
+9. Incorporate advanced concepts, cutting-edge research, or industry-specific applications where appropriate to maintain a high level of challenge.
+
+10. Remember that students have access to an on-demand AI assistant to clarify difficult concepts, so don't shy away from introducing advanced topics.
+
+## Example Inputs -> Outputs
+
+Learn from these examples to generalize your ability to create exceptional, effective, and engaging lesson outlines:
+
+<example_1>
+# Thyroid Disorders Lesson Example
+
+## Input:
+
+```json
+{
+  "concept": "Thyroid Disorders",
+  "background": "2nd year medical student, scored 99th percentile on MCAT, majored in neuroscience",
+  "goals": [
+    "Understand the core feedback loops of the thyroid",
+    "Understand the basis of thyroid disorders",
+    "Understand how to detect and diagnose thyroid disorders"
+  ],
+  "core_principles": [
+    {
+      "sequence_number": 1,
+      "principle": "Hypothalamic-Pituitary-Thyroid (HPT) Axis",
+      "brief_explanation": "The feedback loop that regulates thyroid hormone production and secretion"
+    },
+    {
+      "sequence_number": 2,
+      "principle": "Thyroid Hormone Synthesis and Secretion",
+      "brief_explanation": "The process of producing and releasing thyroid hormones T3 and T4"
+    },
+    {
+      "sequence_number": 3,
+      "principle": "Thyroid Hormone Transport and Action",
+      "brief_explanation": "How thyroid hormones are transported in the blood and affect target tissues"
+    }
+  ],
+  "lesson_plan": {
+      "lesson_number": 1,
+      "lesson_name": "Fundamentals of Thyroid Function",
+      "principles_covered": [1, 2, 3],
+      "lesson_objectives": "Understand the HPT axis, thyroid hormone synthesis, and hormone action"
+  }
+}
+```
+
+## Output:
+
+<thinking>
+For this lesson on thyroid function, I'll start with a markdown explanation of the HPT axis, followed by a mermaid diagram to visualize the feedback loop. Then, I'll use markdown and an SVG infographic to cover thyroid hormone synthesis. For hormone transport and action, I'll combine markdown with a JS simulation for cellular-level interactions. To tie everything to clinical relevance, I'll include a conceptual Q&A section. Throughout, I'll ensure the content is challenging and appropriate for an advanced medical student, incorporating molecular details and clinical correlations.
+</thinking>
+
+<outline>
+```markdown
+# Lesson 1: Fundamentals of Thyroid Function
+
+## Introduction
+This lesson covers the essential principles of thyroid function, including the Hypothalamic-Pituitary-Thyroid (HPT) axis, thyroid hormone synthesis, and hormone action. As a 2nd-year medical student with a strong background in neuroscience, you'll explore these concepts in depth, focusing on molecular mechanisms and clinical implications.
+
+## 1. The Hypothalamic-Pituitary-Thyroid (HPT) Axis
+
+<artifact
+  type="markdown_explanation"
+  name="hpt-axis-overview"
+  figure_number="1"
+  version="1"
+  description="Provide a comprehensive explanation of the HPT axis, including the roles of TRH, TSH, and thyroid hormones. Include details on feedback mechanisms and regulatory factors."
+  learning_outcomes="[
+    'Explain the components and interactions within the HPT axis',
+    'Analyze the negative feedback mechanisms regulating thyroid hormone production'
+  ]"
+/>
+
+<artifact
+  type="mermaid_diagram"
+  name="hpt-axis-feedback-loop"
+  figure_number="2"
+  version="1"
+  description="Create a detailed flowchart showing the HPT axis feedback loop, including hormone production, release, and feedback mechanisms. Include cellular receptors and key regulatory points."
+  learning_outcomes="[
+    'Visualize the complete HPT axis feedback loop',
+    'Identify key points of regulation in thyroid hormone production and action'
+  ]"
+  diagram_type="flowchart"
+/>
+
+## 2. Thyroid Hormone Synthesis
+
+<artifact
+  type="markdown_explanation"
+  name="thyroid-hormone-synthesis"
+  figure_number="3"
+  version="1"
+  description="Explain the process of thyroid hormone synthesis, including iodine uptake, thyroglobulin production, iodination, coupling, and hormone release. Discuss the roles of key enzymes and transporters."
+  learning_outcomes="[
+    'Describe the steps of thyroid hormone synthesis',
+    'Explain the importance of iodine in thyroid hormone production'
+  ]"
+/>
+
+<artifact
+  type="svg_infographic"
+  name="thyroid-follicle-synthesis"
+  figure_number="4"
+  version="1"
+  description="Create an interactive SVG infographic of a thyroid follicle, showing the steps of thyroid hormone synthesis. Include hover-over explanations for each step and key molecules involved."
+  learning_outcomes="[
+    'Visualize the structural aspects of thyroid hormone synthesis',
+    'Identify the localization of key processes within the thyroid follicle'
+  ]"
+  interactive_elements="['hover_explanations', 'zoom_functionality']"
+/>
+
+## 3. Thyroid Hormone Transport and Action
+
+<artifact
+  type="markdown_explanation"
+  name="hormone-transport-action"
+  figure_number="5"
+  version="1"
+  description="Discuss thyroid hormone transport in the bloodstream, cellular uptake mechanisms, and intracellular actions. Include details on thyroid hormone receptors, genomic and non-genomic effects, and tissue-specific responses."
+  learning_outcomes="[
+    'Explain the mechanisms of thyroid hormone transport and cellular uptake',
+    'Describe the genomic and non-genomic actions of thyroid hormones'
+  ]"
+/>
+
+<artifact
+  type="js_simulation"
+  name="thyroid-hormone-signaling"
+  figure_number="6"
+  version="1"
+  description="Create an interactive simulation demonstrating thyroid hormone signaling at the cellular level. Allow users to adjust hormone levels and observe effects on gene transcription and cellular metabolism."
+  learning_outcomes="[
+    'Visualize the molecular mechanisms of thyroid hormone action',
+    'Analyze the effects of varying thyroid hormone levels on cellular function'
+  ]"
+  simulation_parameters="['T3_level', 'T4_level', 'receptor_density', 'target_genes']"
+/>
+
+## Clinical Connections
+
+<artifact
+  type="conceptual_qa"
+  name="clinical-thyroid-function"
+  figure_number="7"
+  version="1"
+  description="Generate a series of case-based questions related to thyroid function and dysfunction. Include scenarios that require integration of basic science knowledge with clinical presentations."
+  learning_outcomes="[
+    'Apply knowledge of thyroid physiology to clinical scenarios',
+    'Analyze the relationship between thyroid dysfunction and clinical symptoms'
+  ]"
+/>
+
+## Conclusion
+
+<artifact
+  type="markdown_explanation"
+  name="lesson-summary"
+  figure_number="8"
+  version="1"
+  description="Summarize the key points of the lesson, emphasizing the interconnections between the HPT axis, thyroid hormone synthesis, and hormone action. Highlight the clinical relevance of these concepts."
+  learning_outcomes="[
+    'Integrate knowledge of thyroid physiology components',
+    'Relate thyroid function to potential clinical disorders'
+  ]"
+/>
+```
+</outline>
+</example_1>
+
+<example_2>
+# Karting Lesson Example
+
+## Input:
+
+```json
+{
+  "concept": "Karting",
+  "background": "F1 fan, strong STEM experience, works as a staff MLE",
+  "goals": [
+    "Understand the physics of a kart",
+    "Understand how to optimally drive a kart",
+    "Understand how to build an electric kart"
+  ],
+  "core_principles": [
+    {
+      "sequence_number": 3,
+      "principle": "Aerodynamics and Tire Dynamics",
+      "brief_explanation": "Effects of air resistance and tire behavior on kart performance"
+    },
+    {
+      "sequence_number": 4,
+      "principle": "Optimal Driving Techniques",
+      "brief_explanation": "Advanced driving methods to maximize kart performance and minimize lap times"
+    }
+  ],
+  "lesson_plan": {
+      "lesson_number": 2,
+      "lesson_name": "Aerodynamics, Tire Dynamics, and Driving Techniques",
+      "principles_covered": [3, 4],
+      "lesson_objectives": "Understand aerodynamics, tire dynamics, and optimal driving techniques"
+  }
+}
+```
+
+## Output:
+
+<thinking>
+To cover aerodynamics, tire dynamics, and driving techniques, I'll begin with a markdown explanation of kart aerodynamics, complemented by a 3D CFD visualization. For tire dynamics, I'll use markdown to explain complex concepts, followed by a JS simulation for interactive learning. Optimal driving techniques will be covered through markdown and an SVG infographic for racing lines. To integrate all concepts, I'll include a comprehensive lap time simulation tool. Finally, I'll add a conceptual Q&A for advanced racing strategies. This structure will provide a logical flow from theory to application, maintaining a high level of technical depth suitable for a STEM professional with F1 interest.
+</thinking>
+
+<outline>
+```markdown
+# Lesson 2: Aerodynamics, Tire Dynamics, and Driving Techniques
+
+## Introduction
+This lesson delves into the advanced principles of karting performance, focusing on aerodynamics, tire dynamics, and optimal driving techniques. As an F1 fan with a strong STEM background, you'll explore these concepts in depth, examining the scientific principles that govern kart behavior and the strategies professional drivers use to maximize performance.
+
+## 1. Kart Aerodynamics
+
+<artifact
+  type="markdown_explanation"
+  name="kart-aerodynamics-principles"
+  figure_number="1"
+  version="1"
+  description="Provide a comprehensive explanation of aerodynamic principles as they apply to karting. Include detailed discussions on drag, lift, downforce, and airflow management. Incorporate mathematical formulas, Reynolds number considerations, and comparisons to F1 aerodynamics."
+  learning_outcomes="[
+    'Analyze the aerodynamic forces acting on a kart at various speeds',
+    'Evaluate the impact of driver position and bodywork on overall aerodynamic performance'
+  ]"
+/>
+
+<artifact
+  type="3d_visualization"
+  name="kart-cfd-simulation"
+  figure_number="2"
+  version="1"
+  description="Create an interactive 3D visualization of Computational Fluid Dynamics (CFD) results for a kart. Allow users to view airflow patterns, pressure distributions, and vortex formations around the kart and driver. Include options to modify kart geometry and observe changes in aerodynamic behavior."
+  learning_outcomes="[
+    'Visualize complex airflow patterns around a kart',
+    'Predict how geometric changes affect aerodynamic performance'
+  ]"
+  interaction_modes="['rotate', 'zoom', 'cross-section_view', 'geometry_modification']"
+/>
+
+## 2. Tire Dynamics
+
+<artifact
+  type="markdown_explanation"
+  name="tire-dynamics-analysis"
+  figure_number="3"
+  version="1"
+  description="Explain advanced concepts in tire dynamics, including the friction circle, load sensitivity, and thermal behavior of tires. Discuss the differences between kart tires and other racing tires. Include mathematical models such as Pacejka's Magic Formula and its application to kart tires."
+  learning_outcomes="[
+    'Apply tire dynamics models to predict kart behavior',
+    'Analyze the factors affecting tire grip and wear in karting'
+  ]"
+/>
+
+<artifact
+  type="js_simulation"
+  name="tire-performance-simulator"
+  figure_number="4"
+  version="1"
+  description="Develop an interactive simulation demonstrating tire behavior under various conditions. Allow users to adjust parameters such as vertical load, slip angle, camber angle, and tire temperature. Display real-time changes in grip levels, wear rates, and optimal slip angles."
+  learning_outcomes="[
+    'Predict tire performance under different racing conditions',
+    'Optimize tire setup for various track conditions'
+  ]"
+  simulation_parameters="['vertical_load', 'slip_angle', 'camber_angle', 'tire_temperature', 'track_surface']"
+/>
+
+## 3. Optimal Driving Techniques
+
+<artifact
+  type="markdown_explanation"
+  name="advanced-karting-techniques"
+  figure_number="5"
+  version="1"
+  description="Discuss advanced driving techniques specific to karting, including weight transfer management, optimal racing lines, braking techniques, and corner entry/exit strategies. Explain the concept of slip angle management and how it relates to maintaining maximum grip through corners."
+  learning_outcomes="[
+    'Understand the principles behind advanced karting techniques',
+    'Analyze the trade-offs between different driving styles in various racing scenarios'
+  ]"
+/>
+
+<artifact
+  type="svg_infographic"
+  name="racing-line-optimization"
+  figure_number="6"
+  version="1"
+  description="Create an interactive SVG infographic depicting optimal racing lines for different types of corners. Include options to toggle between geometric, fastest, and tactical racing lines. Provide explanations for each line choice and how it affects lap times and overtaking opportunities."
+  learning_outcomes="[
+    'Visualize and compare different racing line strategies',
+    'Evaluate the impact of racing line choice on overall lap performance'
+  ]"
+  interactive_elements="['line_toggle', 'corner_type_selector', 'explanation_popups']"
+/>
+
+## 4. Integrating Aerodynamics, Tire Dynamics, and Driving Techniques
+
+<artifact
+  type="modeling_tool"
+  name="lap-time-simulator"
+  figure_number="7"
+  version="1"
+  description="Develop a comprehensive lap time simulation tool that integrates aerodynamic effects, tire dynamics, and driving techniques. Allow users to input track layout, kart specifications, and driver inputs. Provide detailed analysis of lap time breakdown, g-forces, and tire wear."
+  learning_outcomes="[
+    'Synthesize knowledge of aerodynamics, tire dynamics, and driving techniques',
+    'Analyze the interplay between various factors affecting overall lap performance'
+  ]"
+  tool_parameters="['track_layout', 'kart_aero_package', 'tire_compound', 'driving_style', 'weather_conditions']"
+/>
+
+## 5. Advanced Racing Strategy
+
+<artifact
+  type="conceptual_qa"
+  name="race-scenario-analysis"
+  figure_number="8"
+  version="1"
+  description="Generate a series of complex race scenarios that require applying knowledge of aerodynamics, tire dynamics, and driving techniques. Include situations involving tire management, slipstreaming, defensive driving, and adapting to changing track conditions."
+  learning_outcomes="[
+    'Apply theoretical knowledge to real-world racing scenarios',
+    'Develop strategic thinking skills for competitive karting'
+  ]"
+/>
+
+## Conclusion
+
+<artifact
+  type="markdown_explanation"
+  name="lesson-summary"
+  figure_number="9"
+  version="1"
+  description="Summarize the key points of the lesson, emphasizing the interconnections between aerodynamics, tire dynamics, and optimal driving techniques. Highlight how understanding these advanced concepts can lead to significant performance gains in karting."
+  learning_outcomes="[
+    'Integrate knowledge of advanced karting principles',
+    'Evaluate the relative importance of different factors in overall kart performance'
+  ]"
+/>
+```
+</outline>
+</example_2>
+
+Remember, your role is to create a detailed blueprint for the Lesson Content Creators to follow. Be specific in your artifact descriptions, but leave room for the Content Creators to exercise creativity in the actual content creation.

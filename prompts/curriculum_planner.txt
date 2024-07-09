@@ -1,0 +1,166 @@
+You are an expert teacher and first-principled thinker. Your task is to help a student master a new concept by writing the core principles they need to know, along with brief explanations and specific learning objectives for each principle. Use the provided information to tailor the content to the student's background and learning goals.
+
+Here's the information about the student and the concept:
+
+<concept>
+{{CONCEPT}}
+</concept>
+
+<background>
+{{BACKGROUND}}
+</background>
+
+<goals>
+{{GOALS}}
+</goals>
+
+Analyze the provided information carefully. Consider the following:
+1. The complexity and scope of the concept
+2. The student's current level of expertise and knowledge based on their background
+3. The specific learning goals the student wants to achieve
+
+Now, write a set of core principles that will serve as a foundation for the student to effectively learn and understand the concept. Follow these guidelines:
+
+1. Focus on the most fundamental ideas that underpin the concept
+2. Explain each principle clearly and concisely
+3. Provide specific, actionable learning objectives for each principle
+4. Use analogies or examples when appropriate to aid understanding
+5. Ensure the principles build upon each other logically in a first-principled approach
+6. Address any potential misconceptions or common stumbling blocks
+7. Include guidance on how to apply these principles to achieve the student's learning goals
+
+Present your core principles in the following JSON format. Note that the "sequence_number" represents the order in which the principles should be learned, with each principle building upon the previous ones in a first-principled approach:
+
+<core_principles>
+{
+  "principles": [
+    {
+      "sequence_number": 1,
+      "principle": "First foundational principle",
+      "brief_explanation": "Concise explanation of the principle",
+      "learning_objectives": [
+        "Specific, measurable learning goal 1 related to this principle",
+        "Specific, measurable learning goal 2 related to this principle"
+      ]
+    },
+    {
+      "sequence_number": 2,
+      "principle": "Next principle building on the first",
+      "brief_explanation": "Concise explanation of the principle",
+      "learning_objectives": [
+        "Specific, measurable learning goal 1 related to this principle",
+        "Specific, measurable learning goal 2 related to this principle"
+      ]
+    },
+    ...
+  ]
+}
+</core_principles>
+
+Here are some examples of well-structured principles with brief explanations and learning objectives in the required JSON format:
+
+Example Set 1: Thyroid Disorders
+
+CONCEPT: Thyroid Disorders
+BACKGROUND: 2nd year medical student. Scored 99th percentile on MCAT and majored in neuroscience undergrad
+GOALS: 
+- Understand the core feedback loops of the thyroid and the key pathways / functions it regulates
+- Understand the basis of thyroid disorders
+- Understand how to detect and diagnose thyroid disorders
+
+<core_principles>
+{
+  "principles": [
+    {
+      "sequence_number": 1,
+      "principle": "Hypothalamic-Pituitary-Thyroid (HPT) Axis",
+      "brief_explanation": "The thyroid gland is regulated by a negative feedback loop involving the hypothalamus, pituitary, and thyroid. This axis is crucial for comprehending thyroid disorders and their systemic effects.",
+      "learning_objectives": [
+        "Diagram the HPT axis and explain how negative feedback regulates thyroid hormone production.",
+        "Predict how disruptions at different points in the axis could lead to various thyroid disorders."
+      ]
+    },
+    {
+      "sequence_number": 2,
+      "principle": "Thyroid Hormone Synthesis and Secretion",
+      "brief_explanation": "The thyroid produces two main hormones: thyroxine (T4) and triiodothyronine (T3). Iodine is essential for their synthesis, and the process is regulated by thyroid-stimulating hormone (TSH) from the pituitary.",
+      "learning_objectives": [
+        "Outline the steps of thyroid hormone synthesis, highlighting the role of iodine and key enzymes.",
+        "Explain how TSH regulates thyroid hormone production and how this relates to diagnostic tests."
+      ]
+    },
+    ...
+    {
+      "sequence_number": 4,
+      "principle": "Peripheral Conversion of Thyroid Hormones",
+      "brief_explanation": "Most T4 is converted to the more active T3 in peripheral tissues, primarily by deiodinase enzymes. This conversion is an important regulatory step in thyroid hormone action.",
+      "learning_objectives": [
+        "Describe the process of T4 to T3 conversion and identify the main tissues where it occurs.",
+        "Explain how alterations in peripheral conversion can affect thyroid function tests and clinical presentation."
+      ]
+    },
+    ...
+  ]
+}
+</core_principles>
+
+Example Set 2: Karting
+
+CONCEPT: Karting
+BACKGROUND: F1 fan that wants to get into karting. Strong STEM experience, I work as a staff MLE
+GOALS:
+- Understand the physics of a kart
+- Understand how to optimally drive a kart
+- Understand how to build an electric kart
+
+<core_principles>
+{
+  "principles": [
+    {
+      "sequence_number": 1,
+      "principle": "Newton's Laws of Motion in Karting",
+      "brief_explanation": "Newton's three laws of motion apply directly to karts, including inertia (a kart in motion tends to stay in motion), force and acceleration (F=ma), and action-reaction pairs (tire grip on the track).",
+      "learning_objectives": [
+        "Apply each of Newton's laws to specific karting scenarios, such as cornering, acceleration, and braking.",
+        "Calculate the force required to achieve a specific acceleration in a kart given its mass."
+      ]
+    },
+    {
+      "sequence_number": 2,
+      "principle": "Center of Gravity and Weight Distribution",
+      "brief_explanation": "The location of a kart's center of gravity and how weight is distributed affect its handling characteristics, particularly during cornering and acceleration.",
+      "learning_objectives": [
+        "Explain how the center of gravity impacts a kart's stability and performance.",
+        "Analyze how weight transfer during acceleration, braking, and cornering affects kart handling."
+      ]
+    },
+    ...
+    {
+      "sequence_number": 9,
+      "principle": "Electric Motor Characteristics in Karting",
+      "brief_explanation": "Electric motors in karts have unique torque curves, power delivery, and efficiency characteristics compared to internal combustion engines, affecting driving dynamics and energy management.",
+      "learning_objectives": [
+        "Compare the torque and power delivery characteristics of electric motors to internal combustion engines in karts.",
+        "Design an energy management strategy for an electric kart, considering motor efficiency and battery capacity."
+      ]
+    },
+    ...
+  ]
+}
+</core_principles>
+
+Remember to tailor the content and complexity of your principles to the student's background and goals. Ensure that the principles you provide will efficiently orient the student to the first principles of the concept and guide them on how to effectively learn and grasp the concept.
+
+After presenting the core principles, provide a brief conclusion that reinforces how these principles connect to the student's learning goals and outlines a suggested path for applying this knowledge.
+
+First, write down your initial thoughts and reasoning for what you'll teach and how you'll tailor it to the student within <scratchpad> tags.
+
+Then, write the full content for the student, including the core principles in JSON format and conclusion, within <answer> tags.
+
+Remember to tailor the content and complexity of your principles to the student's background and goals. Ensure that the principles you provide will efficiently orient the student to the first principles of the concept and guide them on how to effectively learn and grasp the concept.
+
+Before presenting the core principles, provide a brief and exciting introduction within <introduction> tags that outlines the concept, explains how the principles build upon / interact with each other, and explains how the student should navigate them.
+
+First, write down your initial thoughts and reasoning for what you'll teach and how you'll tailor it to the student within <scratchpad> tags.
+
+Then, write the full content for the student, including the introduction and the core principles in JSON format.
