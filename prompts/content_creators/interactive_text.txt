@@ -16,7 +16,7 @@ You will receive the following inputs:
 4. Core Principles: A JSON object containing the fundamental principles of the concept
 5. Lesson Plan: A JSON object containing the high-level structure for the specific lesson
 6. Lesson Outline: A detailed markdown outline of the lesson, including placeholders for artifacts
-7. Artifact Name: The specific artifact you are to create content for
+7. Artifact: The specific artifact you are to create content for
 
 ### General Guidelines
 
@@ -159,9 +159,9 @@ Remember, your content should be dense and informative, similar to a high-qualit
 {{LESSON_OUTLINE}}
 </lesson_outline>
 
-<artifact_name>
-{{ARTIFACT_NAME}}
-</artifact_name>
+<artifact>
+{{ARTIFACT}}
+</artifact>
 
 Analyze these inputs carefully. Pay special attention to:
 1. The complexity of the concept relative to the student's background
@@ -169,7 +169,7 @@ Analyze these inputs carefully. Pay special attention to:
 3. Which core principles are most relevant to the specific artifact
 4. How the artifact can contribute to achieving the lesson objectives and student goals
 
-Use the artifact_name to look up the artifact's full details and specifications in the lesson_outline. Use these details to guide the content you create for the artifact.
+Use all of the properties and details in the artifact JSON to guide the content you create for the artifact.
 
 ## Output Format and Requirements
 
@@ -189,19 +189,19 @@ Here are abbreviated examples of input and output for different artifact types:
 
 Input:
 ```
-<artifact_name>hpt-axis-overview</artifact_name>
-
-<artifact
-  type="markdown_explanation"
-  name="hpt-axis-overview"
-  figure_number="1"
-  version="1"
-  description="Provide a comprehensive explanation of the HPT axis, including the roles of TRH, TSH, and thyroid hormones. Include details on feedback mechanisms and regulatory factors."
-  learning_outcomes="[
-    'Explain the components and interactions within the HPT axis',
-    'Analyze the negative feedback mechanisms regulating thyroid hormone production'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "hpt-axis-overview",
+  "figure_number": "1",
+  "version": 1,
+  "description": "Provide a comprehensive explanation of the HPT axis, including the roles of TRH, TSH, and thyroid hormones. Include details on feedback mechanisms and regulatory factors.",
+  "learning_outcomes": [
+    "Explain the components and interactions within the HPT axis",
+    "Analyze the negative feedback mechanisms regulating thyroid hormone production"
+  ]
+}
+</artifact>
 ```
 
 Output:
@@ -256,20 +256,20 @@ This mechanism involves complex intracellular signaling cascades, including:
 
 Input:
 ```
-<artifact_name>kart-physics-walkthrough</artifact_name>
-
-<artifact
-  type="guided_walkthrough"
-  name="kart-physics-walkthrough"
-  figure_number="3"
-  version="1"
-  description="Create a step-by-step walkthrough of the fundamental physics principles applied to karting. Include explanations of forces, motion, and energy concepts. Use interactive elements to reinforce understanding."
-  learning_outcomes="[
-    'Apply Newton's laws of motion to kart dynamics',
-    'Analyze the forces acting on a kart during different racing scenarios',
-    'Calculate key performance metrics using physics formulas'
-  ]"
-/>
+<artifact>
+{
+  "type": "guided_walkthrough",
+  "name": "kart-physics-walkthrough",
+  "figure_number": "3",
+  "version": 1,
+  "description": "Create a step-by-step walkthrough of the fundamental physics principles applied to karting. Include explanations of forces, motion, and energy concepts. Use interactive elements to reinforce understanding.",
+  "learning_outcomes": [
+    "Apply Newton's laws of motion to kart dynamics",
+    "Analyze the forces acting on a kart during different racing scenarios",
+    "Calculate key performance metrics using physics formulas"
+  ]
+}
+</artifact>
 ```
 
 Output:

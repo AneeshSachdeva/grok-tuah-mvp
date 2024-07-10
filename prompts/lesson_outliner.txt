@@ -75,34 +75,38 @@ Your output should follow this general structure:
 
 ## [Section 1 Title]
 
-<artifact
-  type="[artifact_type]"
-  name="[unique_identifier]"
-  figure_number="[sequential_number]"
-  version="1"
-  description="[Detailed description of the artifact content]"
-  learning_outcomes="[
-    'Learning outcome 1',
-    'Learning outcome 2'
-  ]"
+<artifact>
+{
+  "type": "[artifact_type]",
+  "name": "[unique_identifier]",
+  "figure_number": "[sequential_number]",
+  "version": 1,
+  "description": "[Detailed description of the artifact content]",
+  "learning_outcomes": [
+    "Learning outcome 1",
+    "Learning outcome 2"
+  ],
   [Additional properties specific to the artifact type]
-/>
+}
+</artifact>
 
 [Additional sections and artifacts...]
 
 ## Conclusion
 
-<artifact
-  type="markdown_explanation"
-  name="lesson-summary"
-  figure_number="[final_number]"
-  version="1"
-  description="Summarize the key points of the lesson, emphasizing the interconnections between the principles covered."
-  learning_outcomes="[
-    'Integrate knowledge of the principles covered',
-    'Relate theoretical concepts to practical applications'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "lesson-summary",
+  "figure_number": "[final_number]",
+  "version": 1,
+  "description": "Summarize the key points of the lesson, emphasizing the interconnections between the principles covered.",
+  "learning_outcomes": [
+    "Integrate knowledge of the principles covered",
+    "Relate theoretical concepts to practical applications"
+  ]
+}
+</artifact>
 ```
 </outline>
 
@@ -377,112 +381,128 @@ This lesson covers the essential principles of thyroid function, including the H
 
 ## 1. The Hypothalamic-Pituitary-Thyroid (HPT) Axis
 
-<artifact
-  type="markdown_explanation"
-  name="hpt-axis-overview"
-  figure_number="1"
-  version="1"
-  description="Provide a comprehensive explanation of the HPT axis, including the roles of TRH, TSH, and thyroid hormones. Include details on feedback mechanisms and regulatory factors."
-  learning_outcomes="[
-    'Explain the components and interactions within the HPT axis',
-    'Analyze the negative feedback mechanisms regulating thyroid hormone production'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "hpt-axis-overview",
+  "figure_number": 1,
+  "version": 1,
+  "description": "Provide a comprehensive explanation of the HPT axis, including the roles of TRH, TSH, and thyroid hormones. Include details on feedback mechanisms and regulatory factors.",
+  "learning_outcomes": [
+    "Explain the components and interactions within the HPT axis",
+    "Analyze the negative feedback mechanisms regulating thyroid hormone production"
+  ]
+}
+</artifact>
 
-<artifact
-  type="mermaid_diagram"
-  name="hpt-axis-feedback-loop"
-  figure_number="2"
-  version="1"
-  description="Create a detailed flowchart showing the HPT axis feedback loop, including hormone production, release, and feedback mechanisms. Include cellular receptors and key regulatory points."
-  learning_outcomes="[
-    'Visualize the complete HPT axis feedback loop',
-    'Identify key points of regulation in thyroid hormone production and action'
-  ]"
-  diagram_type="flowchart"
-/>
+<artifact>
+{
+  "type": "mermaid_diagram",
+  "name": "hpt-axis-feedback-loop",
+  "figure_number": 2,
+  "version": 1,
+  "description": "Create a detailed flowchart showing the HPT axis feedback loop, including hormone production, release, and feedback mechanisms. Include cellular receptors and key regulatory points.",
+  "learning_outcomes": [
+    "Visualize the complete HPT axis feedback loop",
+    "Identify key points of regulation in thyroid hormone production and action"
+  ],
+  "diagram_type": "flowchart"
+}
+</artifact>
 
 ## 2. Thyroid Hormone Synthesis
 
-<artifact
-  type="markdown_explanation"
-  name="thyroid-hormone-synthesis"
-  figure_number="3"
-  version="1"
-  description="Explain the process of thyroid hormone synthesis, including iodine uptake, thyroglobulin production, iodination, coupling, and hormone release. Discuss the roles of key enzymes and transporters."
-  learning_outcomes="[
-    'Describe the steps of thyroid hormone synthesis',
-    'Explain the importance of iodine in thyroid hormone production'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "thyroid-hormone-synthesis",
+  "figure_number": 3,
+  "version": 1,
+  "description": "Explain the process of thyroid hormone synthesis, including iodine uptake, thyroglobulin production, iodination, coupling, and hormone release. Discuss the roles of key enzymes and transporters.",
+  "learning_outcomes": [
+    "Describe the steps of thyroid hormone synthesis",
+    "Explain the importance of iodine in thyroid hormone production"
+  ]
+}
+</artifact>
 
-<artifact
-  type="svg_infographic"
-  name="thyroid-follicle-synthesis"
-  figure_number="4"
-  version="1"
-  description="Create an interactive SVG infographic of a thyroid follicle, showing the steps of thyroid hormone synthesis. Include hover-over explanations for each step and key molecules involved."
-  learning_outcomes="[
-    'Visualize the structural aspects of thyroid hormone synthesis',
-    'Identify the localization of key processes within the thyroid follicle'
-  ]"
-  interactive_elements="['hover_explanations', 'zoom_functionality']"
-/>
+<artifact>
+{
+  "type": "svg_infographic",
+  "name": "thyroid-follicle-synthesis",
+  "figure_number": 4,
+  "version": 1,
+  "description": "Create an interactive SVG infographic of a thyroid follicle, showing the steps of thyroid hormone synthesis. Include hover-over explanations for each step and key molecules involved.",
+  "learning_outcomes": [
+    "Visualize the structural aspects of thyroid hormone synthesis",
+    "Identify the localization of key processes within the thyroid follicle"
+  ],
+  "interactive_elements": ["hover_explanations", "zoom_functionality"]
+}
+</artifact>
 
 ## 3. Thyroid Hormone Transport and Action
 
-<artifact
-  type="markdown_explanation"
-  name="hormone-transport-action"
-  figure_number="5"
-  version="1"
-  description="Discuss thyroid hormone transport in the bloodstream, cellular uptake mechanisms, and intracellular actions. Include details on thyroid hormone receptors, genomic and non-genomic effects, and tissue-specific responses."
-  learning_outcomes="[
-    'Explain the mechanisms of thyroid hormone transport and cellular uptake',
-    'Describe the genomic and non-genomic actions of thyroid hormones'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "hormone-transport-action",
+  "figure_number": 5,
+  "version": 1,
+  "description": "Discuss thyroid hormone transport in the bloodstream, cellular uptake mechanisms, and intracellular actions. Include details on thyroid hormone receptors, genomic and non-genomic effects, and tissue-specific responses.",
+  "learning_outcomes": [
+    "Explain the mechanisms of thyroid hormone transport and cellular uptake",
+    "Describe the genomic and non-genomic actions of thyroid hormones"
+  ]
+}
+</artifact>
 
-<artifact
-  type="js_simulation"
-  name="thyroid-hormone-signaling"
-  figure_number="6"
-  version="1"
-  description="Create an interactive simulation demonstrating thyroid hormone signaling at the cellular level. Allow users to adjust hormone levels and observe effects on gene transcription and cellular metabolism."
-  learning_outcomes="[
-    'Visualize the molecular mechanisms of thyroid hormone action',
-    'Analyze the effects of varying thyroid hormone levels on cellular function'
-  ]"
-  simulation_parameters="['T3_level', 'T4_level', 'receptor_density', 'target_genes']"
-/>
+<artifact>
+{
+  "type": "js_simulation",
+  "name": "thyroid-hormone-signaling",
+  "figure_number": 6,
+  "version": 1,
+  "description": "Create an interactive simulation demonstrating thyroid hormone signaling at the cellular level. Allow users to adjust hormone levels and observe effects on gene transcription and cellular metabolism.",
+  "learning_outcomes": [
+    "Visualize the molecular mechanisms of thyroid hormone action",
+    "Analyze the effects of varying thyroid hormone levels on cellular function"
+  ],
+  "simulation_parameters": ["T3_level", "T4_level", "receptor_density", "target_genes"]
+}
+</artifact>
 
 ## Clinical Connections
 
-<artifact
-  type="conceptual_qa"
-  name="clinical-thyroid-function"
-  figure_number="7"
-  version="1"
-  description="Generate a series of case-based questions related to thyroid function and dysfunction. Include scenarios that require integration of basic science knowledge with clinical presentations."
-  learning_outcomes="[
-    'Apply knowledge of thyroid physiology to clinical scenarios',
-    'Analyze the relationship between thyroid dysfunction and clinical symptoms'
-  ]"
-/>
+<artifact>
+{
+  "type": "conceptual_qa",
+  "name": "clinical-thyroid-function",
+  "figure_number": 7,
+  "version": 1,
+  "description": "Generate a series of case-based questions related to thyroid function and dysfunction. Include scenarios that require integration of basic science knowledge with clinical presentations.",
+  "learning_outcomes": [
+    "Apply knowledge of thyroid physiology to clinical scenarios",
+    "Analyze the relationship between thyroid dysfunction and clinical symptoms"
+  ]
+}
+</artifact>
 
 ## Conclusion
 
-<artifact
-  type="markdown_explanation"
-  name="lesson-summary"
-  figure_number="8"
-  version="1"
-  description="Summarize the key points of the lesson, emphasizing the interconnections between the HPT axis, thyroid hormone synthesis, and hormone action. Highlight the clinical relevance of these concepts."
-  learning_outcomes="[
-    'Integrate knowledge of thyroid physiology components',
-    'Relate thyroid function to potential clinical disorders'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "lesson-summary",
+  "figure_number": 8,
+  "version": 1,
+  "description": "Summarize the key points of the lesson, emphasizing the interconnections between the HPT axis, thyroid hormone synthesis, and hormone action. Highlight the clinical relevance of these concepts.",
+  "learning_outcomes": [
+    "Integrate knowledge of thyroid physiology components",
+    "Relate thyroid function to potential clinical disorders"
+  ]
+}
+</artifact>
 ```
 </outline>
 </example_1>
@@ -537,127 +557,145 @@ This lesson delves into the advanced principles of karting performance, focusing
 
 ## 1. Kart Aerodynamics
 
-<artifact
-  type="markdown_explanation"
-  name="kart-aerodynamics-principles"
-  figure_number="1"
-  version="1"
-  description="Provide a comprehensive explanation of aerodynamic principles as they apply to karting. Include detailed discussions on drag, lift, downforce, and airflow management. Incorporate mathematical formulas, Reynolds number considerations, and comparisons to F1 aerodynamics."
-  learning_outcomes="[
-    'Analyze the aerodynamic forces acting on a kart at various speeds',
-    'Evaluate the impact of driver position and bodywork on overall aerodynamic performance'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "kart-aerodynamics-principles",
+  "figure_number": 1,
+  "version": 1,
+  "description": "Provide a comprehensive explanation of aerodynamic principles as they apply to karting. Include detailed discussions on drag, lift, downforce, and airflow management. Incorporate mathematical formulas, Reynolds number considerations, and comparisons to F1 aerodynamics.",
+  "learning_outcomes": [
+    "Analyze the aerodynamic forces acting on a kart at various speeds",
+    "Evaluate the impact of driver position and bodywork on overall aerodynamic performance"
+  ]
+}
+</artifact>
 
-<artifact
-  type="3d_visualization"
-  name="kart-cfd-simulation"
-  figure_number="2"
-  version="1"
-  description="Create an interactive 3D visualization of Computational Fluid Dynamics (CFD) results for a kart. Allow users to view airflow patterns, pressure distributions, and vortex formations around the kart and driver. Include options to modify kart geometry and observe changes in aerodynamic behavior."
-  learning_outcomes="[
-    'Visualize complex airflow patterns around a kart',
-    'Predict how geometric changes affect aerodynamic performance'
-  ]"
-  interaction_modes="['rotate', 'zoom', 'cross-section_view', 'geometry_modification']"
-/>
+<artifact>
+{
+  "type": "3d_visualization",
+  "name": "kart-cfd-simulation",
+  "figure_number": 2,
+  "version": 1,
+  "description": "Create an interactive 3D visualization of Computational Fluid Dynamics (CFD) results for a kart. Allow users to view airflow patterns, pressure distributions, and vortex formations around the kart and driver. Include options to modify kart geometry and observe changes in aerodynamic behavior.",
+  "learning_outcomes": [
+    "Visualize complex airflow patterns around a kart",
+    "Predict how geometric changes affect aerodynamic performance"
+  ],
+  "interaction_modes": ["rotate", "zoom", "cross-section_view", "geometry_modification"]
+}
+</artifact>
 
 ## 2. Tire Dynamics
 
-<artifact
-  type="markdown_explanation"
-  name="tire-dynamics-analysis"
-  figure_number="3"
-  version="1"
-  description="Explain advanced concepts in tire dynamics, including the friction circle, load sensitivity, and thermal behavior of tires. Discuss the differences between kart tires and other racing tires. Include mathematical models such as Pacejka's Magic Formula and its application to kart tires."
-  learning_outcomes="[
-    'Apply tire dynamics models to predict kart behavior',
-    'Analyze the factors affecting tire grip and wear in karting'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "tire-dynamics-analysis",
+  "figure_number": 3,
+  "version": 1,
+  "description": "Explain advanced concepts in tire dynamics, including the friction circle, load sensitivity, and thermal behavior of tires. Discuss the differences between kart tires and other racing tires. Include mathematical models such as Pacejka's Magic Formula and its application to kart tires.",
+  "learning_outcomes": [
+    "Apply tire dynamics models to predict kart behavior",
+    "Analyze the factors affecting tire grip and wear in karting"
+  ]
+}
+</artifact>
 
-<artifact
-  type="js_simulation"
-  name="tire-performance-simulator"
-  figure_number="4"
-  version="1"
-  description="Develop an interactive simulation demonstrating tire behavior under various conditions. Allow users to adjust parameters such as vertical load, slip angle, camber angle, and tire temperature. Display real-time changes in grip levels, wear rates, and optimal slip angles."
-  learning_outcomes="[
-    'Predict tire performance under different racing conditions',
-    'Optimize tire setup for various track conditions'
-  ]"
-  simulation_parameters="['vertical_load', 'slip_angle', 'camber_angle', 'tire_temperature', 'track_surface']"
-/>
+<artifact>
+{
+  "type": "js_simulation",
+  "name": "tire-performance-simulator",
+  "figure_number": 4,
+  "version": 1,
+  "description": "Develop an interactive simulation demonstrating tire behavior under various conditions. Allow users to adjust parameters such as vertical load, slip angle, camber angle, and tire temperature. Display real-time changes in grip levels, wear rates, and optimal slip angles.",
+  "learning_outcomes": [
+    "Predict tire performance under different racing conditions",
+    "Optimize tire setup for various track conditions"
+  ],
+  "simulation_parameters": ["vertical_load", "slip_angle", "camber_angle", "tire_temperature", "track_surface"]
+}
+</artifact>
 
 ## 3. Optimal Driving Techniques
 
-<artifact
-  type="markdown_explanation"
-  name="advanced-karting-techniques"
-  figure_number="5"
-  version="1"
-  description="Discuss advanced driving techniques specific to karting, including weight transfer management, optimal racing lines, braking techniques, and corner entry/exit strategies. Explain the concept of slip angle management and how it relates to maintaining maximum grip through corners."
-  learning_outcomes="[
-    'Understand the principles behind advanced karting techniques',
-    'Analyze the trade-offs between different driving styles in various racing scenarios'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "advanced-karting-techniques",
+  "figure_number": 5,
+  "version": 1,
+  "description": "Discuss advanced driving techniques specific to karting, including weight transfer management, optimal racing lines, braking techniques, and corner entry/exit strategies. Explain the concept of slip angle management and how it relates to maintaining maximum grip through corners.",
+  "learning_outcomes": [
+    "Understand the principles behind advanced karting techniques",
+    "Analyze the trade-offs between different driving styles in various racing scenarios"
+  ]
+}
+</artifact>
 
-<artifact
-  type="svg_infographic"
-  name="racing-line-optimization"
-  figure_number="6"
-  version="1"
-  description="Create an interactive SVG infographic depicting optimal racing lines for different types of corners. Include options to toggle between geometric, fastest, and tactical racing lines. Provide explanations for each line choice and how it affects lap times and overtaking opportunities."
-  learning_outcomes="[
-    'Visualize and compare different racing line strategies',
-    'Evaluate the impact of racing line choice on overall lap performance'
-  ]"
-  interactive_elements="['line_toggle', 'corner_type_selector', 'explanation_popups']"
-/>
+<artifact>
+{
+  "type": "svg_infographic",
+  "name": "racing-line-optimization",
+  "figure_number": 6,
+  "version": 1,
+  "description": "Create an interactive SVG infographic depicting optimal racing lines for different types of corners. Include options to toggle between geometric, fastest, and tactical racing lines. Provide explanations for each line choice and how it affects lap times and overtaking opportunities.",
+  "learning_outcomes": [
+    "Visualize and compare different racing line strategies",
+    "Evaluate the impact of racing line choice on overall lap performance"
+  ],
+  "interactive_elements": ["line_toggle", "corner_type_selector", "explanation_popups"]
+}
+</artifact>
 
 ## 4. Integrating Aerodynamics, Tire Dynamics, and Driving Techniques
 
-<artifact
-  type="modeling_tool"
-  name="lap-time-simulator"
-  figure_number="7"
-  version="1"
-  description="Develop a comprehensive lap time simulation tool that integrates aerodynamic effects, tire dynamics, and driving techniques. Allow users to input track layout, kart specifications, and driver inputs. Provide detailed analysis of lap time breakdown, g-forces, and tire wear."
-  learning_outcomes="[
-    'Synthesize knowledge of aerodynamics, tire dynamics, and driving techniques',
-    'Analyze the interplay between various factors affecting overall lap performance'
-  ]"
-  tool_parameters="['track_layout', 'kart_aero_package', 'tire_compound', 'driving_style', 'weather_conditions']"
-/>
+<artifact>
+{
+  "type": "modeling_tool",
+  "name": "lap-time-simulator",
+  "figure_number": 7,
+  "version": 1,
+  "description": "Develop a comprehensive lap time simulation tool that integrates aerodynamic effects, tire dynamics, and driving techniques. Allow users to input track layout, kart specifications, and driver inputs. Provide detailed analysis of lap time breakdown, g-forces, and tire wear.",
+  "learning_outcomes": [
+    "Synthesize knowledge of aerodynamics, tire dynamics, and driving techniques",
+    "Analyze the interplay between various factors affecting overall lap performance"
+  ],
+  "tool_parameters": ["track_layout", "kart_aero_package", "tire_compound", "driving_style", "weather_conditions"]
+}
+</artifact>
 
 ## 5. Advanced Racing Strategy
 
-<artifact
-  type="conceptual_qa"
-  name="race-scenario-analysis"
-  figure_number="8"
-  version="1"
-  description="Generate a series of complex race scenarios that require applying knowledge of aerodynamics, tire dynamics, and driving techniques. Include situations involving tire management, slipstreaming, defensive driving, and adapting to changing track conditions."
-  learning_outcomes="[
-    'Apply theoretical knowledge to real-world racing scenarios',
-    'Develop strategic thinking skills for competitive karting'
-  ]"
-/>
+<artifact>
+{
+  "type": "conceptual_qa",
+  "name": "race-scenario-analysis",
+  "figure_number": 8,
+  "version": 1,
+  "description": "Generate a series of complex race scenarios that require applying knowledge of aerodynamics, tire dynamics, and driving techniques. Include situations involving tire management, slipstreaming, defensive driving, and adapting to changing track conditions.",
+  "learning_outcomes": [
+    "Apply theoretical knowledge to real-world racing scenarios",
+    "Develop strategic thinking skills for competitive karting"
+  ]
+}
+</artifact>
 
 ## Conclusion
 
-<artifact
-  type="markdown_explanation"
-  name="lesson-summary"
-  figure_number="9"
-  version="1"
-  description="Summarize the key points of the lesson, emphasizing the interconnections between aerodynamics, tire dynamics, and optimal driving techniques. Highlight how understanding these advanced concepts can lead to significant performance gains in karting."
-  learning_outcomes="[
-    'Integrate knowledge of advanced karting principles',
-    'Evaluate the relative importance of different factors in overall kart performance'
-  ]"
-/>
+<artifact>
+{
+  "type": "markdown_explanation",
+  "name": "lesson-summary",
+  "figure_number": 9,
+  "version": 1,
+  "description": "Summarize the key points of the lesson, emphasizing the interconnections between aerodynamics, tire dynamics, and optimal driving techniques. Highlight how understanding these advanced concepts can lead to significant performance gains in karting.",
+  "learning_outcomes": [
+    "Integrate knowledge of advanced karting principles",
+    "Evaluate the relative importance of different factors in overall kart performance"
+  ]
+}
+</artifact>
 ```
 </outline>
 </example_2>
