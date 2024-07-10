@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { UserInputSchema, CurriculumPlannerOutputSchema, LessonPlannerOutputSchema } from '@/lib/schemas'
 import { callAI, extractTextFromTags } from '@/lib/ai'
+import { createGrok } from '@/lib/storage'
 import fs from 'fs'
 import path from 'path'
 
@@ -15,22 +16,14 @@ export async function POST(req: Request) {
       .replace('{{GOALS}}', JSON.stringify(userInput.goals))
 
     const curriculumPlannerOutput = await callAI(renderedCurriculumPlannerPrompt, 2048, 0.3)
-    console.log("Curriculum Planner Output:", curriculumPlannerOutput)
-
+    
+    const introduction = extractTextFromTags(curriculumPlannerOutput, 'introduction')
     const corePrinciplesJSON = extractTextFromTags(curriculumPlannerOutput, 'core_principles')
-    console.log("Extracted Core Principles JSON:", corePrinciplesJSON)
 
-    if (!corePrinciplesJSON) {
-      throw new Error("Failed to extract core principles from AI output")
-    }
-
-    let corePrinciples
-    try {
-      corePrinciples = CurriculumPlannerOutputSchema.parse(JSON.parse(corePrinciplesJSON))
-    } catch (error) {
-      console.error("Error parsing core principles JSON:", error)
-      throw new Error("Invalid core principles JSON")
-    }
+    const corePrinciples = CurriculumPlannerOutputSchema.parse({
+      introduction,
+      principles: JSON.parse(corePrinciplesJSON).principles
+    })
 
     const lessonPlannerPrompt = fs.readFileSync(path.join(process.cwd(), 'prompts', 'lesson_planner.txt'), 'utf8')
     const renderedLessonPlannerPrompt = lessonPlannerPrompt
@@ -40,17 +33,23 @@ export async function POST(req: Request) {
       .replace('{{CORE_PRINCIPLES}}', JSON.stringify(corePrinciples))
 
     const lessonPlannerOutput = await callAI(renderedLessonPlannerPrompt, 1024, 0.3)
-    console.log("Lesson Planner Output:", lessonPlannerOutput)
+    const lessonPlans = LessonPlannerOutputSchema.parse(JSON.parse(lessonPlannerOutput))
 
-    let lessonPlans
-    try {
-      lessonPlans = LessonPlannerOutputSchema.parse(JSON.parse(lessonPlannerOutput))
-    } catch (error) {
-      console.error("Error parsing lesson plans JSON:", error)
-      throw new Error("Invalid lesson plans JSON")
+    const grokId = `root_${Date.now()}`
+    const newGrok = {
+      id: grokId,
+      concept: userInput.concept,
+      background: userInput.background,
+      goals: userInput.goals,
+      corePrinciples,
+      lessonPlans,
+      lessonOutlines: {},
+      parentGrokId: null,
     }
 
-    return NextResponse.json({ corePrinciples, lessonPlans })
+    createGrok(newGrok)
+
+    return NextResponse.json({ id: grokId, ...newGrok })
   } catch (error) {
     console.error('Error in generateGrok:', error)
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
