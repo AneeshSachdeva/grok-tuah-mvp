@@ -200,7 +200,7 @@ export default function GrokPage({ params }: { params: { grokId: string } }) {
     p: ({children}) => <p>{renderLatex(String(children))}</p>,
     details: ({children}) => <details>{children}</details>,
     summary: ({children}) => <summary>{children}</summary>,
-    li: ({ children, ordered, ...props }) => {
+    li: ({ children, ...props }) => {
       if (Array.isArray(children)) {
         // Handle the case where children is an array
         const content = children.map((child, index) => {
@@ -213,7 +213,7 @@ export default function GrokPage({ params }: { params: { grokId: string } }) {
       }
       // Handle the case where children is a single object or string
       if (typeof children === 'object' && children !== null && 'content' in children) {
-        return <li {...props}>{children.content}</li>;
+        return <li {...props}>{(children as { content: React.ReactNode }).content}</li>;
       }
       return <li {...props}>{children}</li>;
     },

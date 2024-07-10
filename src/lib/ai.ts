@@ -11,7 +11,12 @@ export async function callAI(prompt: string, maxTokens: number = 1024, temperatu
     temperature: temperature,
     messages: [{ role: "user", content: prompt }],
   })
-  return response.content[0].text
+  
+  // Check if the content is text and return it, otherwise return an empty string
+  if (response.content[0].type === 'text') {
+    return response.content[0].text
+  }
+  return ''
 }
 
 export function extractTextFromTags(content: string, tagName: string): string {
