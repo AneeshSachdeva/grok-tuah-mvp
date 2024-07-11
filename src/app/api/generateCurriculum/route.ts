@@ -4,6 +4,8 @@ import { callAI, extractTextFromTags } from '@/lib/ai'
 import fs from 'fs'
 import path from 'path'
 
+export const maxDuration = 60; // This function can run for a maximum of 60 seconds
+
 export async function POST(req: Request) {
   try {
     const userInput = UserInputSchema.parse(await req.json())

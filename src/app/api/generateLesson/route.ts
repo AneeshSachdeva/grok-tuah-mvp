@@ -4,6 +4,8 @@ import { callAI, extractTextFromTags } from '@/lib/ai'
 import fs from 'fs'
 import path from 'path'
 
+export const maxDuration = 60; // This function can run for a maximum of 60 seconds
+
 function extractArtifacts(content: string) {
   console.log("Attempting to extract artifacts from content");
 
